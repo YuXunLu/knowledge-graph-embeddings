@@ -49,6 +49,9 @@ class Evaluator(object):
         start_id = 0
         for samples in dataset.batch_iter(self.batchsize, rand_flg=False):
             subs, rels, objs = samples[:, 0], samples[:, 1], samples[:, 2]
+            print("subs", subs)
+            print("rels", rels)
+            print("objs", objs)
             ids = np.arange(start_id, start_id+len(samples))
 
             # TODO: partitioned calculation
